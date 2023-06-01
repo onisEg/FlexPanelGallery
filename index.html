@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="panals">
+        <div class="panal ">
+            <p>Time</p>
+            <p>heals</p>
+            <p>wounds</p>
+        </div>
+        <div class="panal">
+            <p>Time</p>
+            <p>heals</p>
+            <p>wounds</p>
+        </div>
+        <div class="panal">
+            <p>Time</p>
+            <p>heals</p>
+            <p>wounds</p>
+        </div>
+        <div class="panal">
+            <p>Time</p>
+            <p>heals</p>
+            <p>wounds</p>
+        </div>
+        <div class="panal">
+            <p>Time</p>
+            <p>heals</p>
+            <p>wounds</p>
+        </div>
+    </div>
+
+
+    <style>
+        html{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-transform: capitalize;
+        }
+        .panals {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .panal {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            flex: 1;
+            background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .panal>* {
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+ 
+            transition: 0.3s;
+        }
+
+        .panal>*:nth-child(1) {
+            transform: translateY(-100%);
+            transition: 0.3s;
+        }
+
+        .panal.open>*:nth-child(1) {
+            transform: translateY(0%);
+            transition: 0.3s;
+        }
+
+
+        .panal>*:nth-child(3) {
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+
+        .panal.open>*:nth-child(3) {
+            transform: translateY(0%);
+            transition: 0.3s;
+        }
+        .open-active{
+            flex: 2;            
+        }
+        .open-active>*:nth-child(2){
+            font-size: 5rem;
+        }
+    </style>
+    <script>
+
+        const panals = document.querySelectorAll(`.panal`);
+
+        function open(){
+            this.classList.toggle('open')
+        }
+
+        function openActive(){
+            this.classList.toggle('open-active')
+        }
+
+        panals.forEach((panal)=>panal.addEventListener('click',open))
+        panals.forEach((panal)=>panal.addEventListener('click',openActive))
+
+    </script>
+
+</body>
+
+</html>
