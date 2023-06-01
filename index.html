@@ -13,39 +13,40 @@
 
 <body>
     <div class="panals">
-        <div class="panal ">
+        <div class="panal panal1 ">
             <p>Time</p>
             <p>heals</p>
             <p>wounds</p>
         </div>
-        <div class="panal">
-            <p>Time</p>
-            <p>heals</p>
-            <p>wounds</p>
+        <div class="panal panal2 ">
+            <p>Actions</p>
+            <p>speak</p>
+            <p>louder</p>
         </div>
-        <div class="panal">
-            <p>Time</p>
-            <p>heals</p>
-            <p>wounds</p>
+        <div class="panal panal3">
+            <p>Beauty</p>
+            <p>lies</p>
+            <p>within</p>
         </div>
-        <div class="panal">
-            <p>Time</p>
-            <p>heals</p>
-            <p>wounds</p>
+        <div class="panal panal4">
+            <p>Dream</p>
+            <p>big</p>
+            <p>dreams</p>
         </div>
-        <div class="panal">
-            <p>Time</p>
-            <p>heals</p>
-            <p>wounds</p>
+        <div class="panal panal5">
+            <p>Life</p>
+            <p>is</p>
+            <p>short</p>
         </div>
     </div>
 
 
     <style>
-        html{
+        html {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-transform: capitalize;
         }
+
         .panals {
             display: flex;
             width: 100%;
@@ -64,9 +65,29 @@
             align-items: center;
             transition: 0.3s;
             flex: 1;
-            background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
             background-position: center;
             background-size: cover;
+
+        }
+
+        .panal1 {
+            background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500 );
+        }
+
+        .panal2 {
+            background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500 );
+        }
+
+        .panal3 {
+            background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d );
+        }
+
+        .panal4 {
+            background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500 );
+        }
+
+        .panal5 {
+            background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500 );
         }
 
         .panal>* {
@@ -77,8 +98,9 @@
             width: 100%;
             height: 100%;
             margin: 0;
- 
+            color: white;
             transition: 0.3s;
+            text-shadow: 0 0 20px black;
         }
 
         .panal>*:nth-child(1) {
@@ -101,10 +123,12 @@
             transform: translateY(0%);
             transition: 0.3s;
         }
-        .open-active{
-            flex: 2;            
+
+        .open-active {
+            flex: 2;
         }
-        .open-active>*:nth-child(2){
+
+        .open-active>*:nth-child(2) {
             font-size: 5rem;
         }
     </style>
@@ -112,16 +136,16 @@
 
         const panals = document.querySelectorAll(`.panal`);
 
-        function open(){
+        function open() {
             this.classList.toggle('open')
         }
 
-        function openActive(){
+        function openActive() {
             this.classList.toggle('open-active')
         }
 
-        panals.forEach((panal)=>panal.addEventListener('click',open))
-        panals.forEach((panal)=>panal.addEventListener('click',openActive))
+        panals.forEach((panal) => panal.addEventListener('click', open))
+        panals.forEach((panal) => panal.addEventListener('click', openActive))
 
     </script>
 
